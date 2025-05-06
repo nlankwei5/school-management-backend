@@ -1,0 +1,65 @@
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+*$py.class
+
+# C extensions
+*.so
+
+# Distribution / packaging
+build/
+dist/
+*.egg-info/
+.eggs/
+
+# Installer logs
+pip-log.txt
+pip-delete-this-directory.txt
+
+# Unit test / coverage reports
+htmlcov/
+.coverage
+.tox/
+.nox/
+coverage.xml
+*.cover
+*.py,cover
+
+# Django stuff:
+*.log
+*.pot
+*.pyc
+local_settings.py
+db.sqlite3
+
+# If you use media/uploads locally
+media/
+uploads/
+
+# Virtual environments
+.venv/
+env/
+venv/
+ENV/
+env.bak/
+venv.bak/
+
+# VSCode
+.vscode/
+
+# PyCharm
+.idea/
+
+# macOS
+.DS_Store
+.AppleDouble
+.LSOverride
+
+# Windows
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+
+# Editor backups
+*~
+*.swp
