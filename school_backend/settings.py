@@ -37,12 +37,10 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'rest_framework',
-    'corsheaders',
+    'core',
 ]
 
-MIDDLEWARE = [
-    'corsheaders.middleware.CorsMiddleware', 
+MIDDLEWARE = [ 
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
@@ -130,3 +128,4 @@ CORS_ALLOWED_ORIGINS = [
 ]
 
 
+AUTH_USER_MODEL = 'core.CustomUser'
