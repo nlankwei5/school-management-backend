@@ -51,13 +51,18 @@ class CustomUser (AbstractBaseUser, PermissionsMixin):
 
 
 class Grade(models.Model):
-    Grade_id = models.AutoField(primary_key=True)
-    Name = models.CharField(max_length=30)
-    Level = models.CharField(max_length=20)
+    grade_id = models.AutoField(primary_key=True)
+    name = models.CharField(max_length=30)
+    level = models.CharField(max_length=20)
     academic_year = models.CharField(max_length=9)
 
     def __str__(self):
         return f"{self.Name} - {self.academic_year}"
+    
+    @property
+    def assigned_teacher(self):
+        assignment = self.teacher_assignments.first()
+        return assignment.teacher_to_be_assigned if assignment else None
     
 
 
@@ -91,7 +96,7 @@ class Attendance(models.Model):
 
 class TeacherGradeAssignment(models.Model):
     teacher_to_be_assigned= models.ForeignKey(Teacher, on_delete=models.CASCADE)
-    grade_to_be_assigned_to = models.ForeignKey(Grade, on_delete=models.CASCADE)
+    grade_to_be_assigned_to = models.OneToOneField(Grade, on_delete=models.CASCADE, related_name="teacher-assignments")
     role_type = models.CharField(max_length=20)
     subject = models.CharField(max_length=20)
 
